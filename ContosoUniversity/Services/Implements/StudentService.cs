@@ -1,21 +1,28 @@
-﻿using System;
+﻿using ContosoUniversity.Models;
+using ContosoUniversity.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Models;
-using ContosoUniversity.Repositories;
 
 namespace ContosoUniversity.Services.Implements
 {
     public class StudentService : GenericService<Student>, IStudentService
     {
-        private IStudenRepository studenRepository;
+        private IStudentRepositoy studentRepository;
 
-        public StudentService (IStudenRepository studenRepository) : base(studenRepository)
+        public StudentService(IStudentRepositoy studentRepository) : base(studentRepository)
         {
-            this.studenRepository = studenRepository;
+            this.studentRepository = studentRepository;
+
         }
 
 
+        public async Task<IEnumerable<Course>> GetCursosByStudent(int id)
+        {
+
+            return await studentRepository.GetCursosByStudent(id);
+            //throw new NotImplementedException();
+        }
     }
 }

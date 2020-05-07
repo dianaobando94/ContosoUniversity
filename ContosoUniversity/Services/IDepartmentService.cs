@@ -8,5 +8,6 @@ namespace ContosoUniversity.Services
 {
     public interface IDepartmentService : IGenericService<Department>
     {
+        
     }
 }

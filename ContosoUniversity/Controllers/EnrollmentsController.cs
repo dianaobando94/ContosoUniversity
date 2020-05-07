@@ -13,11 +13,11 @@ namespace ContosoUniversity.Controllers
     public class EnrollmentsController : Controller
     {
         private IEnrollmentService enrollmentServices;
-        private IStudenRepository studentService;
+        private IStudentRepositoy studentService;
         private ICourseService courseService;
 
         public EnrollmentsController(IEnrollmentService enrollmentServices, 
-            IStudenRepository studentService, ICourseService courseService)
+            IStudentRepositoy studentService, ICourseService courseService)
         {
             this.enrollmentServices = enrollmentServices;
             this.studentService = studentService;

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using ContosoUniversity.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.Models;
-
 
 namespace ContosoUniversity.Repositories
 {
-   public interface IStudenRepository: IGenericRepository<Student>
+    public interface IStudentRepositoy : IGenericRepository<Student>
     {
+        Task<IEnumerable<Course>> GetCursosByStudent(int id);
 
     }
 }

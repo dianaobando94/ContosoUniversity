@@ -46,11 +46,13 @@ namespace ContosoUniversity
                 options.UseSqlServer(Configuration.GetConnectionString("SchoolContext")));
 
             //repositories
-            services.AddScoped<IStudenRepository, StudentRepository>();
+            services.AddScoped<IStudentRepositoy, StudentRepository>();
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
             services.AddScoped<ICourseInstructorRepository, CourseInstructorRepository>();
             services.AddScoped<IInstructorRepository, InstructorRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IOfficeAssignmentRepository, OfficeAssignmentRepository>();
 
             //servicios
             services.AddScoped<IStudentService, StudentService>();
@@ -58,7 +60,12 @@ namespace ContosoUniversity
             services.AddScoped<IEnrollmentService, EnrollmentServices>();
             services.AddScoped<ICourseInstructorService, CourseInstructorService>();
             services.AddScoped<IInstructorService, InstructorService>();
-          
+            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IOfficeAssignmentService, OfficeAssignmentService>();
+
+
+
+
 
 
             //AutoMaper
